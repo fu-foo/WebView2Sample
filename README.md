@@ -20,3 +20,9 @@ OS:Windows10 バージョン21H2
 - ソース内ExecuteScriptAsyncに記載されているJavaScript書き換え
 
 を行ってビルド～実行してください。
+
+# 「参照コンポーネント 'System' が見つかりませんでした。」が出る場合。
+
+NuGetあるあるなので、こちらで対応お願いします。
+
+https://final.hateblo.jp/entry/2015/12/29/182850
