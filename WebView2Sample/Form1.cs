@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
 namespace Fu.WebView2Sample
