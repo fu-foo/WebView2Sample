@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
-
 namespace Fu.WebView2Sample
 {
     /// <summary>
@@ -10,7 +9,6 @@ namespace Fu.WebView2Sample
     /// </summary>
     public partial class Form1 : Form
     {
-
         /// <summary>
         /// フォーム初期化
         /// </summary>
