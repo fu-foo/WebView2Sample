@@ -17,13 +17,13 @@ namespace Fu.WebView2Sample
         {
             InitializeComponent();
 
-            InitializeAsync();
+            InitializeWebView2();
         }
 
         /// <summary>
         /// WebView2初期化
         /// </summary>
-        async void InitializeAsync()
+        async void InitializeWebView2()
         {
             // WebView2の初期処理確認
             await this.webView2.EnsureCoreWebView2Async(null);
