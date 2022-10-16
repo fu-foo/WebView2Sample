@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
 
@@ -17,26 +18,36 @@ namespace Fu.WebView2Sample
         {
             InitializeComponent();
 
-            InitializeWebView2();
+            // WebView2初期化完了イベント追加
+            this.webView2.CoreWebView2InitializationCompleted += this.WebView2InitializationCompleted;
+
+            // WebView2初期化完了確認
+            this.webView2.EnsureCoreWebView2Async(null);
         }
 
         /// <summary>
-        /// WebView2初期化
+        /// WebView2初期化完了イベント
         /// </summary>
-        async void InitializeWebView2()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
         {
-            // WebView2の初期処理確認
-            await this.webView2.EnsureCoreWebView2Async(null);
+            if (e.IsSuccess)
+            {
+                // Yahoo検索画面
+                this.webView2.CoreWebView2.Navigate("https://yahoo.co.jp");
 
-            // Yahoo検索画面
-            this.webView2.CoreWebView2.Navigate("https://yahoo.co.jp");
-
-            // 遷移完了のイベント追加
-            this.webView2.CoreWebView2.NavigationCompleted += this.webView2_NavigationCompleted;
+                // 遷移完了のイベント追加
+                this.webView2.CoreWebView2.NavigationCompleted += this.webView2_NavigationCompleted;
+            }
+            else
+            {
+                // エラー処理
+            }
         }
 
         /// <summary>
-        /// 遷移完了後の処理
+        /// 遷移完了後イベント
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
