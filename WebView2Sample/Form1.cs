@@ -35,7 +35,7 @@ namespace Fu.WebView2Sample
             if (e.IsSuccess)
             {
                 // Yahoo検索画面
-                this.webView2.CoreWebView2.Navigate("https://yahoo.co.jp");
+                this.webView2.CoreWebView2.Navigate("https://url_you_wanna_go");
 
                 // 遷移完了のイベント追加
                 this.webView2.CoreWebView2.NavigationCompleted += this.webView2_NavigationCompleted;
@@ -55,10 +55,8 @@ namespace Fu.WebView2Sample
         {
             if (e.IsSuccess)
             {
-                // 検索文字列に"C#"をセット
-                this.webView2.ExecuteScriptAsync("document.getElementsByName('p').item(0).value = 'C#';");
-                // submit
-                this.webView2.ExecuteScriptAsync("document.getElementsByName('sf1').item(0).submit();");
+                // 実行したいJavaSciprtを記載　※サンプル：name:pppppのタグに"C#"の文字列をセット
+                this.webView2.ExecuteScriptAsync("document.getElementsByName('ppppp').item(0).value = 'C#';");
             }
             else
             {
