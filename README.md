@@ -1,2 +1,22 @@
-# WebView2Sample
-shortest webview sample
+# 初めに
+
+WebView2を最低限動かすためのサンプルです。
+
+- WebView2 初期化
+- WebView2 URL指定で遷移
+- WebView2 でJavaScript実行
+
+を行うサンプルです。
+
+# 環境
+
+OS:Windows10 バージョン21H2
+開発環境:Visual Studio 2022 Enterprise (※大したことはしてないのでCommunity Editionでも動くと思います。）
+.Net Framework4.6 + Windows Forms で今回は作成。
+
+# 使い方
+
+- ソース内"https://url_you_wanna_go"部分を書き換え
+- ソース内ExecuteScriptAsyncに記載されているJavaScript書き換え
+
+を行ってビルド～実行してください。
